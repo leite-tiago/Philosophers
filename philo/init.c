@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: strodrig <strodrig@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 16:55:07 by strodrig          #+#    #+#             */
-/*   Updated: 2025/04/07 16:55:07 by strodrig         ###   ########.fr       */
+/*   Updated: 2025/04/09 18:42:56 by tborges-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	start_philo(t_list *d)
+void	start_philo(t_data *d)
 {
 	pthread_t	monitor;
 	int			i;
@@ -34,7 +34,7 @@ void	start_philo(t_list *d)
 	pthread_join(monitor, NULL);
 }
 
-void	init_mutexes(t_list	*d, int ac, char **av)
+void	init_mutexes(t_data *d, int ac, char **av)
 {
 	int	i;
 
@@ -62,7 +62,7 @@ void	init_mutexes(t_list	*d, int ac, char **av)
 	}
 }
 
-void	init_philos(t_list	*d, int ac, char **av)
+void	init_philos(t_data *d, int ac, char **av)
 {
 	int	i;
 
@@ -75,7 +75,7 @@ void	init_philos(t_list	*d, int ac, char **av)
 		d->philos[i].right_fork = &d->forks[(i + 1) % d->num_philos];
 		d->philos[i].last_meal_time = get_time();
 		d->philos[i].eat_count = 0;
-		d->philos[i].list = d;
+		d->philos[i].data = d;
 		i++;
 	}
 }

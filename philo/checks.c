@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: strodrig <strodrig@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 17:02:57 by strodrig          #+#    #+#             */
-/*   Updated: 2025/04/07 17:02:57 by strodrig         ###   ########.fr       */
+/*   Updated: 2025/04/09 18:38:51 by tborges-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	check_death(t_list *d)
+void	check_death(t_data *d)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ void	check_death(t_list *d)
 	}
 }
 
-void	check_all_eaten(t_list *d)
+void	check_all_eaten(t_data *d)
 {
 	int	i;
 	int	eaten_count;

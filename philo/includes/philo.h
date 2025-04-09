@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: strodrig <strodrig@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 16:29:18 by strodrig          #+#    #+#             */
-/*   Updated: 2025/04/07 16:29:18 by strodrig         ###   ########.fr       */
+/*   Updated: 2025/04/09 18:37:28 by tborges-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ typedef struct s_philo
 	pthread_mutex_t	*right_fork;
 	long			last_meal_time;
 	int				eat_count;
-	struct s_list	*list;
+	struct s_data	*data;
 }			t_philo;
 
-typedef struct s_list
+typedef struct s_data
 {
 	int				num_philos;
 	int				time_to_die;
@@ -48,7 +48,7 @@ typedef struct s_list
 	pthread_mutex_t	check_meal;
 	pthread_mutex_t	check_death;
 	int				odd;
-}				t_list;
+}				t_data;
 
 /* ----- utils.c -----*/
 int		ft_strlen(char *str);
@@ -65,8 +65,8 @@ void	*routine(void *arg);
 void	*monitor_philos(void *arg);
 
 /* ----- checks.c -----*/
-void	check_death(t_list *d);
-void	check_all_eaten(t_list *d);
+void	check_death(t_data *d);
+void	check_all_eaten(t_data *d);
 
 /* ----- actions.c -----*/
 void	eat(t_philo *philo);
@@ -76,14 +76,14 @@ int		eat_enough(t_philo *philo);
 void	handle_one_philo(t_philo *philo);
 
 /* ----- init.c -----*/
-void	start_philo(t_list *d);
-void	init_mutexes(t_list *d, int ac, char **av);
-void	init_philos(t_list *d, int ac, char **av);
+void	start_philo(t_data *d);
+void	init_mutexes(t_data *d, int ac, char **av);
+void	init_philos(t_data *d, int ac, char **av);
 
 /* ----- free.c -----*/
-void	ft_free(t_list *d);
+void	ft_free(t_data *d);
 
 /* ----- ft_print.c -----*/
-void	ft_print(t_list *d, int id, char *act);
+void	ft_print(t_data *d, int id, char *act);
 
 #endif

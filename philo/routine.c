@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: strodrig <strodrig@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 17:08:11 by strodrig          #+#    #+#             */
-/*   Updated: 2025/04/07 17:08:11 by strodrig         ###   ########.fr       */
+/*   Updated: 2025/04/09 18:43:27 by tborges-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	*check_one(void *arg)
 	t_philo	*philo;
 
 	philo = (t_philo *)arg;
-	if (philo->list->num_philos == 1)
+	if (philo->data->num_philos == 1)
 	{
 		handle_one_philo(philo);
 		return (NULL);
@@ -34,13 +34,13 @@ void	*routine(void *arg)
 	waiting_turn(philo);
 	while (1)
 	{
-		pthread_mutex_lock(&philo->list->check_death);
-		if (philo->list->stop == 1)
+		pthread_mutex_lock(&philo->data->check_death);
+		if (philo->data->stop == 1)
 		{
-			pthread_mutex_unlock(&philo->list->check_death);
+			pthread_mutex_unlock(&philo->data->check_death);
 			break ;
 		}
-		pthread_mutex_unlock(&philo->list->check_death);
+		pthread_mutex_unlock(&philo->data->check_death);
 		usleep(100);
 		eat(philo);
 		if (eat_enough(philo))
@@ -53,9 +53,9 @@ void	*routine(void *arg)
 
 void	*monitor_philos(void *arg)
 {
-	t_list	*d;
+	t_data	*d;
 
-	d = (t_list *)arg;
+	d = (t_data *)arg;
 	while (!d->stop)
 	{
 		check_death(d);

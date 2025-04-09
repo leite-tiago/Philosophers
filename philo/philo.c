@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: strodrig <strodrig@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 16:26:56 by strodrig          #+#    #+#             */
-/*   Updated: 2025/04/07 16:26:56 by strodrig         ###   ########.fr       */
+/*   Updated: 2025/04/09 18:36:12 by tborges-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	numeric(char **av, int i, int j)
 	return (1);
 }
 
-static int	parse_args(int ac, char **av, t_list *d)
+static int	parse_args(int ac, char **av, t_data *d)
 {
 	if ((ac == 5 || ac == 6) && numeric(av, 0, 1))
 	{
@@ -50,7 +50,7 @@ static int	parse_args(int ac, char **av, t_list *d)
 
 int	main(int ac, char **av)
 {
-	t_list	d;
+	t_data	d;
 
 	if (ac < 5 || ac > 6)
 	{

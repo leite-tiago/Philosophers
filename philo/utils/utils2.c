@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: strodrig <strodrig@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 17:25:45 by strodrig          #+#    #+#             */
-/*   Updated: 2025/04/07 17:25:45 by strodrig         ###   ########.fr       */
+/*   Updated: 2025/04/09 18:40:40 by tborges-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ long	get_time(void)
 
 void	waiting_turn(t_philo *philo)
 {
-	if (philo->id % 2 == 0)
-		usleep(philo->list->num_philos);
+    if (philo->id % 2 == 0)
+        usleep(philo->data->num_philos);
 }
 
 void	ft_usleep(long milliseconds)

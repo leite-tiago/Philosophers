@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: strodrig <strodrig@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 17:50:08 by strodrig          #+#    #+#             */
-/*   Updated: 2025/04/07 17:50:08 by strodrig         ###   ########.fr       */
+/*   Updated: 2025/04/09 18:39:18 by tborges-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	ft_print(t_list *d, int id, char *act)
+void	ft_print(t_data *d, int id, char *act)
 {
 	pthread_mutex_lock(&d->print_lock);
 	pthread_mutex_lock(&d->check_death);

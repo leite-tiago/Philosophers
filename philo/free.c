@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: strodrig <strodrig@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 17:15:07 by strodrig          #+#    #+#             */
-/*   Updated: 2025/04/07 17:15:07 by strodrig         ###   ########.fr       */
+/*   Updated: 2025/04/09 18:39:15 by tborges-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	ft_free(t_list *d)
+void	ft_free(t_data *d)
 {
 	int	i;
 
