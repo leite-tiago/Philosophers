@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: strodrig <strodrig@student.42lisboa.com    +#+  +:+       +#+         #
+#    By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/04/07 16:36:50 by strodrig          #+#    #+#              #
-#    Updated: 2025/04/07 16:36:50 by strodrig         ###   ########.fr        #
+#    Created: 2025/04/07 16:36:50 by tborges-          #+#    #+#              #
+#    Updated: 2025/04/09 18:51:39 by tborges-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
