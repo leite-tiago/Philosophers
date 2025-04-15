@@ -6,7 +6,7 @@
 /*   By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 16:26:56 by tborges-          #+#    #+#             */
-/*   Updated: 2025/04/09 18:51:42 by tborges-         ###   ########.fr       */
+/*   Updated: 2025/04/15 13:12:53 by tborges-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,13 @@ static int	parse_args(int ac, char **av, t_data *d)
 		d->time_to_die = ft_atoi(av[2]);
 		d->time_to_eat = ft_atoi(av[3]);
 		d->time_to_sleep = ft_atoi(av[4]);
-		d->must_eat_count = -1;
 		if (ac == 6)
 			d->must_eat_count = ft_atoi(av[5]);
+		else
+			d->must_eat_count = -1;
 		if (d->num_philos <= 0 || d->time_to_die <= 0 || d->time_to_eat <= 0
-			|| d->time_to_sleep <= 0
-			|| (d->must_eat_count != -1 && d->must_eat_count <= 0))
+			|| d->time_to_sleep <= 0 || (d->must_eat_count != -1
+				&& d->must_eat_count <= 0))
 			return (0);
 		return (1);
 	}

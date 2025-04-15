@@ -6,7 +6,7 @@
 /*   By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 17:25:45 by tborges-          #+#    #+#             */
-/*   Updated: 2025/04/09 18:50:47 by tborges-         ###   ########.fr       */
+/*   Updated: 2025/04/15 12:59:22 by tborges-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ long	get_time(void)
 
 void	waiting_turn(t_philo *philo)
 {
-    if (philo->id % 2 == 0)
-        usleep(philo->data->num_philos);
+	if (philo->id % 2 == 0)
+		usleep(philo->data->num_philos);
 }
 
 void	ft_usleep(long milliseconds)

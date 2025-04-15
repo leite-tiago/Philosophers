@@ -6,20 +6,20 @@
 /*   By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 16:29:18 by tborges-          #+#    #+#             */
-/*   Updated: 2025/04/09 18:50:54 by tborges-         ###   ########.fr       */
+/*   Updated: 2025/04/15 12:59:35 by tborges-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include <stdio.h>
 # include <fcntl.h>
+# include <limits.h>
 # include <pthread.h>
+# include <stdio.h>
+# include <stdlib.h>
 # include <sys/time.h>
+# include <unistd.h>
 
 typedef struct s_philo
 {
@@ -30,7 +30,7 @@ typedef struct s_philo
 	long			last_meal_time;
 	int				eat_count;
 	struct s_data	*data;
-}			t_philo;
+}					t_philo;
 
 typedef struct s_data
 {
@@ -48,42 +48,42 @@ typedef struct s_data
 	pthread_mutex_t	check_meal;
 	pthread_mutex_t	check_death;
 	int				odd;
-}				t_data;
+}					t_data;
 
-/* ----- utils.c -----*/
-int		ft_strlen(char *str);
-int		ft_atoi(char *str);
-int		ft_strcmp(const char *str1, const char *str2);
+// utils
+int					ft_strlen(char *str);
+int					ft_atoi(char *str);
+int					ft_strcmp(const char *str1, const char *str2);
 
-/* ----- utils2.c -----*/
-long	get_time(void);
-void	waiting_turn(t_philo *philo);
-void	ft_usleep(long milliseconds);
+// utils2
+long				get_time(void);
+void				waiting_turn(t_philo *philo);
+void				ft_usleep(long milliseconds);
 
-/* ----- routine.c -----*/
-void	*routine(void *arg);
-void	*monitor_philos(void *arg);
+// routine
+void				*routine(void *arg);
+void				*monitor_philos(void *arg);
 
-/* ----- checks.c -----*/
-void	check_death(t_data *d);
-void	check_all_eaten(t_data *d);
+// checks
+void				check_death(t_data *d);
+void				check_all_eaten(t_data *d);
 
-/* ----- actions.c -----*/
-void	eat(t_philo *philo);
-void	philo_sleep(t_philo *philo);
-void	think(t_philo *philo);
-int		eat_enough(t_philo *philo);
-void	handle_one_philo(t_philo *philo);
+// actions
+void				eat(t_philo *philo);
+void				philo_sleep(t_philo *philo);
+void				think(t_philo *philo);
+int					eat_enough(t_philo *philo);
+void				handle_one_philo(t_philo *philo);
 
-/* ----- init.c -----*/
-void	start_philo(t_data *d);
-void	init_mutexes(t_data *d, int ac, char **av);
-void	init_philos(t_data *d, int ac, char **av);
+// init
+void				start_philo(t_data *d);
+void				init_mutexes(t_data *d, int ac, char **av);
+void				init_philos(t_data *d, int ac, char **av);
 
-/* ----- free.c -----*/
-void	ft_free(t_data *d);
+// free
+void				ft_free(t_data *d);
 
-/* ----- ft_print.c -----*/
-void	ft_print(t_data *d, int id, char *act);
+// ft_print
+void				ft_print(t_data *d, int id, char *act);
 
 #endif
